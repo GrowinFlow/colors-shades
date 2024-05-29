@@ -70,6 +70,8 @@ function ColorGen(){
     
         console.log(newShades)
         setCopied(null);
+
+    
     }, [color, setSteps, steps])
     
     return{
