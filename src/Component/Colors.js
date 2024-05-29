@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Header from '../Layout/Header';
 
 function hexToRgb(hex){
     let r = 0, g = 0, b = 0;
@@ -25,7 +26,7 @@ function rgbToHex(r, g, b){
 
 function generateShades(hexColor) {
     const shades = [];
-    const steps = 100;
+    const steps = 30;
     const startColor = hexToRgb(hexColor);
 
     // Calculate the number of steps for light and dark shades
@@ -57,7 +58,7 @@ function generateShades(hexColor) {
 const Colors = () => {
 
     const [copied, setCopied] = useState(false);
- const [color, setColor] = useState('#bd0081')
+ const [color, setColor] = useState('#1d73b4')
  const [shades, setShades] = useState([])
 
 useEffect(()=>{
@@ -71,10 +72,10 @@ useEffect(()=>{
 
   return (
     <>
-    <div
-        className=" p-4">
+    <Header PickerFunction={(e)=>setColor(e.target.value)} textInpColoValue={color} />
+    <div className=" p-4 flex flex-col">
 
-            <input className='text-black' type="color" onChange={(e)=>setColor(e.target.value)} />
+            {/* <input className='text-black' type="color" onChange={(e)=>setColor(e.target.value)} /> */}
             <div className="flex flex-wrap items-center justify-center">
                 {
                     shades.map((shade, index)=>(
@@ -84,7 +85,11 @@ useEffect(()=>{
                         onCopy={() => setCopied(index)}
                     >
 
-                        <div key={index} className={`w-40 h-28 text-black`} style={{background: shade}}> <span className="bg-white p-1 text-sm">{copied === index ? 'Copied' : shade}</span> </div>
+                        <div key={index} className={`min-w-24 flex-grow md:min-w-44 lg:min-w-80 h-28 md:h-36 text-black cursor-pointer flex justify-center hover:items-center transition-all ease-in duration-300 group`} style={{background: shade}}> 
+                        
+                        <span className="bg-white p-1 mt-2 group-hover:m-0 text-sm rounded-md group-hover:font-bold group-hover:rounded-none font-mono group-hover:text-2xl absolute shadow-xl transition-all	 ease-linear duration-100" style={{color:color}}>{copied === index ? 'Copied' : shade}</span>
+                        
+                         </div>
                         </CopyToClipboard>
                     ))
                 }
@@ -93,7 +98,6 @@ useEffect(()=>{
         
     </div>
     
-    Colors
     </>
   )
 }

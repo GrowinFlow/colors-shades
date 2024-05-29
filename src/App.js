@@ -1,15 +1,15 @@
 import React from 'react';
-import './App.css';
 import Colors from './Component/Colors';
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header flex justify-center items-center">
+    <>
+
+      <div className=" bg-slate-700 flex flex-col justify-center items-center transition-all ease-in duration-100	">
      <Colors />
-      </header>
-    </div>
+      </div>
+    </>
   );
 }
 
