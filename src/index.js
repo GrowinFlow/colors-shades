@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ColorGenProvider } from './context/ColorGenContext';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+
+    <ColorGenProvider>
     <App />
+
+    </ColorGenProvider>
   </React.StrictMode>
 );
 

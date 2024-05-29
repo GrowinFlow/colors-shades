@@ -8,4 +8,6 @@ function Brush() {
   )
 }
 
-export default Brush
+
+
+export default Brush;
