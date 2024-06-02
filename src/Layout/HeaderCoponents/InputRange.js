@@ -8,7 +8,7 @@ function InputRange() {
   return (
     <>
 
-<div className="shades-control flex items-center shadow-lg p-2 rounded-lg bg-slate-700">
+<div className="shades-control flex items-center shadow-lg p-2 rounded-lg bg-slate-50">
             <input
               type="text"
               name="shadesQuantityInput"

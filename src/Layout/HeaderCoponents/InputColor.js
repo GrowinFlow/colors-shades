@@ -7,7 +7,7 @@ function InputColor() {
 
   return (
     <>
-              <div className="box-inputs flex items-center shadow-lg p-2 rounded-lg bg-slate-700">
+              <div className="box-inputs flex items-center shadow-lg p-2 rounded-lg bg-slate-50">
             <input
               type="color"
               name="colorPick"

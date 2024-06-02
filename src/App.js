@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Colors from './Component/ColorsBox';
+import ColorRounded from './Component/ColorRounded';
 import Footer from './Layout/Footer';
 import { ColorGenContext } from './context/ColorGenContext';
 import Header from './Layout/Header';
@@ -13,9 +13,9 @@ function App() {
   console.log(color , "  __", "Online .. . . . ")
   return (
     <>
-      <div className=" bg-slate-700 flex flex-col justify-center items-center transition-all ease-in duration-100	web-logo">
+      <div className=" bg-white flex flex-col justify-center items-center transition-all ease-in duration-100	web-logo">
      <Header />
-     <Colors />
+     <ColorRounded />
      <Footer />
       </div>
     </>
