@@ -10,7 +10,16 @@ const ColorBox = () => {
         setCopied,
         shades,
         setShades } = useContext(ColorGenContext);
+        const [textColor, setTextColor] = useState(color);
 
+        useEffect(() => {
+          if (color === "#ffffff") {
+            setTextColor("#222222");
+          } else {
+            setTextColor(color);
+          }
+        }, [color]);
+      
     return (
         <>
             <div className=" p-4 flex flex-col">
@@ -27,7 +36,7 @@ const ColorBox = () => {
 
                                 <div key={index} className={`min-w-24 flex-grow md:min-w-44 lg:min-w-80 h-28 md:h-36 text-black cursor-pointer flex justify-center hover:items-center transition-all ease-in duration-300 group`} style={{ background: shade }}>
 
-                                    <span className="bg-white p-1 mt-2 group-hover:m-0 text-sm rounded-md group-hover:font-bold group-hover:rounded-none font-mono group-hover:text-2xl absolute shadow-xl transition-all	 ease-linear duration-100 web-logo" style={{ color: color }}>{copied === index ? 'Copied' : shade}</span>
+                                    <span className="bg-white p-1 mt-2 group-hover:m-0 text-sm rounded-md group-hover:font-bold group-hover:rounded-none font-mono group-hover:text-2xl absolute shadow-xl transition-all	 ease-linear duration-100 web-logo" style={{ color: textColor }}>{copied === index ? 'Copied' : shade}</span>
 
                                 </div>
                             </CopyToClipboard>
