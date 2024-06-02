@@ -6,8 +6,8 @@ import InputColor from './HeaderCoponents/InputColor';
 
 
 function Header() {
-  
-  const {color} = useContext(ColorGenContext);
+  const [isActive,setIsActive] = useState(false)
+  const {color, colorView, setColorView} = useContext(ColorGenContext);
 
 
   return (
@@ -17,6 +17,36 @@ function Header() {
 
         <div className="logo-container web-logo flex items-center text-2xl font-bold text-slate-700 py-2 md:mt-4 mt-2">
           Colors <div className="icon animate-bounce" style={{fill:color}}> <Brush /></div> Shades
+
+  <span className='absolute flex gap-2 right-4 ml-2'>
+  <button
+        className={`p-1 ${colorView ? 'shadow-md rounded' : 'bg-slate-50 hover:bg-slate-100 shadow-md rounded'}`}
+        style={{
+          backgroundColor: colorView ? color : 'inherit',
+          color: colorView ? 'white' : color
+        }}
+        onClick={() => {
+          setIsActive(false);
+          setColorView(true);
+        }}
+      >
+        <i className="fa-regular fa-circle"></i>
+      </button>
+      <button
+        className={`p-1 ${isActive ? 'shadow-md rounded' : 'bg-slate-50 hover:bg-slate-100 shadow-md rounded'}`}
+        style={{
+          backgroundColor: isActive ? color : 'inherit',
+          color: isActive ? 'white' : color
+        }}
+        onClick={() => {
+          setIsActive(true);
+          setColorView(false);
+        }}
+      >
+        <i className="fa-regular fa-square"></i>
+      </button>
+  </span>
+
         </div>
 
         <div className="inputs flex flex-wrap gap-3 items-center justify-center">

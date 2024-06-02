@@ -9,6 +9,7 @@ function ColorGen(){
     const [color, setColor] = useState('#1d73b4')
     const [steps, setSteps] = useState(21)
     const [shades, setShades] = useState([])
+    const [colorView, setColorView] = useState(true)
     
     function hexToRgb(hex){
         let r = 0, g = 0, b = 0;
@@ -82,7 +83,9 @@ function ColorGen(){
         shades,
         setShades,
         steps,
-        setSteps
+        setSteps,
+        colorView,
+         setColorView
         
     };
     

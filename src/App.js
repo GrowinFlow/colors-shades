@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
-import ColorRounded from './Component/ColorRounded';
 import Footer from './Layout/Footer';
 import { ColorGenContext } from './context/ColorGenContext';
 import Header from './Layout/Header';
+import ColorView from './Component/ColorView';
+
+
 
 
 
@@ -15,7 +17,7 @@ function App() {
     <>
       <div className=" bg-white flex flex-col justify-center items-center transition-all ease-in duration-100	web-logo">
      <Header />
-     <ColorRounded />
+     <ColorView />
      <Footer />
       </div>
     </>
